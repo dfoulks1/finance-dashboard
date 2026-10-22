@@ -12,22 +12,19 @@
 From initial interview with Drew (technical lead, non-finance background):
 
 ### Technical Architecture (Confirmed)
-- **Stack:** Python + Quart (async) + Jinja2 + Bootstrap 5
-- **Dependency management:** `uv` + `pyproject.toml`
-- **Plugin architecture:** Drop-in `.py` files in `plugins/` that inherit from base classes
-- **Storage:** Plugin-based (ship SQLite default, PostgreSQL optional)
-- **Deployment:** ASF-hosted Ubuntu LTS, systemd service
+- **defaults:** follow coding, linting, ui, and environment management standards from https://github.com/apache/tooling-trusted-releases, because we want to be able to integrate with the ATR tool.
 - **Auth:** ASF LDAP (future), HTTP basic auth via Apache httpd initially
 - **Logging:** Comprehensive structured JSON logs, audit trail for all actions
-- **UI:** Bootstrap 5, left nav pane extensible via plugins, responsive (desktop-priority)
 
 ### Known Financial Structure
 - **Total assets:** ~$4M
-- **Reserve (restricted):** ~$2M (must not be spent)
+- **Reserve (restricted):** ~$2M (should not be spent; may be spent by board approval with a reason)
 - **Operating cash (unrestricted):** ~$2M (liquid)
-- **Fiscal year:** Configurable (actual ASF FY unknown)
+- **Fiscal year:** ASF fiscal year starts May 1st
 - **Revenue tracking:** Includes "shadow budget" for in-kind donation value
 - **Budget structure:** Committee-level budgets (queryable/configurable)
+- **IRS 990 Tax Data:** available at https://projects.propublica.org/nonprofits/api via EIN 470825376
+- **ASF Annual Report:** review reference data on operations and budget use at https://apache.org/foundation/docs/FY2026AnnualReport.pdf
 
 ### Plugin Types to Support
 1. Data source plugins (accounting systems, CSV, databases, APIs)
@@ -47,7 +44,6 @@ From initial interview with Drew (technical lead, non-finance background):
 
 ### Gaps Requiring Finance Stakeholder Input
 - Actual accounting system in use
-- ASF fiscal year start date
 - Full cost/revenue category taxonomies
 - Alert thresholds and triggers
 - Essential metrics and user persona needs
