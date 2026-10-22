@@ -10,7 +10,12 @@ work here.
 finance-dashboard/
 ├── CONTRIBUTING.md                 # AI contribution guide (authoritative)
 ├── README.md                       # project entry point
-├── mkdocs.yml                      # docs site config (MkDocs Material)
+├── mkdocs.yml                      # docs site config (custom Bootstrap 5 theme)
+├── theme/                          # custom MkDocs theme (Jinja2 + Bootstrap 5)
+│   ├── main.html                   # page template
+│   ├── 404.html
+│   ├── partials/navbar.html        # central navbar (imported by both templates)
+│   └── css/{custom,pygments}.css
 ├── docs-src/                       # this website's SOURCE (markdown)
 │   ├── index.md
 │   ├── ai-contribution.md          # embeds CONTRIBUTING.md

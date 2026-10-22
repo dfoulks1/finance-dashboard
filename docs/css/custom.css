@@ -1,0 +1,65 @@
+/* ASF Financial Dashboard docs — Bootstrap 5 custom theme styling. */
+
+:root { scroll-padding-top: 4.5rem; } /* offset sticky navbar for #anchors */
+
+.docs-content {
+  max-width: 62rem;
+}
+.docs-content article > :first-child { margin-top: 0; }
+.docs-content h1, .docs-content h2 { margin-top: 1.75rem; }
+.docs-content h2 { padding-bottom: .3rem; border-bottom: 1px solid var(--bs-border-color); }
+
+/* toc permalink pilcrows from the toc extension */
+.headerlink { opacity: 0; margin-left: .35rem; text-decoration: none; font-weight: 400; }
+:hover > .headerlink { opacity: .5; }
+
+/* Right-hand table of contents */
+.docs-toc-list { font-size: .875rem; }
+.docs-toc-list .nav-link { color: var(--bs-secondary-color); border-left: 2px solid transparent; padding-left: .6rem; }
+.docs-toc-list .nav-link:hover { color: var(--bs-body-color); }
+.docs-toc .docs-toc-list .docs-toc-list { padding-left: .75rem; }
+
+/* Code */
+.docs-content pre {
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: .375rem;
+  padding: .85rem 1rem;
+  overflow-x: auto;
+}
+.docs-content :not(pre) > code {
+  background: var(--bs-tertiary-bg);
+  padding: .15em .4em;
+  border-radius: .25rem;
+  font-size: .875em;
+}
+.docs-content pre code { background: none; padding: 0; }
+
+/* Admonitions (admonition / details) styled as Bootstrap-ish callouts */
+.admonition, details.admonition {
+  border: 1px solid var(--bs-border-color);
+  border-left: .3rem solid var(--bs-secondary);
+  border-radius: .375rem;
+  padding: .75rem 1rem;
+  margin: 1rem 0;
+  background: var(--bs-tertiary-bg);
+}
+.admonition > :last-child { margin-bottom: 0; }
+.admonition-title, details.admonition > summary {
+  font-weight: 600;
+  margin: -.25rem 0 .5rem;
+  cursor: default;
+}
+details.admonition > summary { cursor: pointer; }
+.admonition.note, .admonition.info { border-left-color: var(--bs-primary); }
+.admonition.tip, .admonition.hint { border-left-color: var(--bs-success); }
+.admonition.warning, .admonition.caution { border-left-color: var(--bs-warning); }
+.admonition.danger, .admonition.error { border-left-color: var(--bs-danger); }
+
+/* Mermaid diagrams: center and give breathing room */
+pre.mermaid { background: none; border: 0; text-align: center; }
+
+/* Tables (classes also added via JS for responsiveness) */
+.docs-content .table { font-size: .925rem; }
+
+footer { background: var(--bs-tertiary-bg); }

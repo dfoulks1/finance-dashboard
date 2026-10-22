@@ -22,10 +22,19 @@ with, plus its license. This matters for two reasons:
 | Component | Version | License | Category | Purpose |
 |-----------|---------|---------|----------|---------|
 | mkdocs | `>=1.6` | BSD-2-Clause | A | Static docs site generator |
-| mkdocs-material | `>=9.5` | MIT | A | Docs theme |
 | pymdown-extensions | `>=10.0` | MIT | A | Markdown extensions (snippets, superfences, mermaid) |
+| Pygments | `>=2.17` | BSD-2-Clause | A | Code-block syntax highlighting |
 
-(Mermaid diagrams render client-side via the theme; no build-time dependency.)
+The docs use a **custom MkDocs theme built on Bootstrap 5** (in `theme/`, Jinja2
+templates — matching the dashboard's own stack), not a third-party theme package.
+These front-end assets load client-side from a CDN at page-view time (not build
+dependencies):
+
+| Asset | Version | License | Category | Purpose |
+|-------|---------|---------|----------|---------|
+| Bootstrap | 5.3.3 | MIT | A | CSS/JS framework |
+| Bootstrap Icons | 1.11.3 | MIT | A | Icon font |
+| Mermaid | 10.x | MIT | A | Client-side diagram rendering |
 
 ## Planned runtime stack (not yet built)
 
