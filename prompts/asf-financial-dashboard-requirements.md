@@ -18,13 +18,14 @@ From initial interview with Drew (technical lead, non-finance background):
 
 ### Known Financial Structure
 - **Total assets:** ~$4M
-- **Reserve (restricted):** ~$2M (should not be spent; may be spent by board approval with a reason)
+- **Reserve (restricted):** ~$2M (should not be spent; may be spent by board approval with a specific reason)
 - **Operating cash (unrestricted):** ~$2M (liquid)
 - **Fiscal year:** ASF fiscal year starts May 1st
-- **Revenue tracking:** Includes "shadow budget" for in-kind donation value
+- **Revenue tracking:** Include "infra shadow budget" for in-kind donation value, accounted for separately
 - **Budget structure:** Committee-level budgets (queryable/configurable)
 - **IRS 990 Tax Data:** available at https://projects.propublica.org/nonprofits/api via EIN 470825376
-- **ASF Annual Report:** review reference data on operations and budget use at https://apache.org/foundation/docs/FY2026AnnualReport.pdf
+- **ASF Annual Report:** review reference data on operations and budget categories at https://apache.org/foundation/docs/FY2026AnnualReport.pdf
+- **ASF Historical Budgets:** review reference data at https://whimsy.apache.org/board/minutes/Budget.html
 
 ### Plugin Types to Support
 1. Data source plugins (accounting systems, CSV, databases, APIs)
@@ -35,15 +36,19 @@ From initial interview with Drew (technical lead, non-finance background):
 6. Dashboard widget plugins (custom charts, tables)
 7. Alert rule plugins (custom triggers)
 8. MCP plugin (ship by default for AI queries)
+9. Email mailing list plugin
 
 ### Design Principles
 - **Documentation-first:** Easy to understand and extend
 - **Stable core:** Extend without modifying core classes
 - **Extensibility > features:** Prefer plugin hooks to built-in complexity
 - **Operable by volunteers:** Non-technical users must be able to use it
+- **Accuracy Is Critical:** All numbers displayed must come from a specific source
+- **Apache licensed:** use Apache-2.0 and only Category-A permissively licensed dependencies
+- **Confidential information:** restrict access to private budgets or reports
 
 ### Gaps Requiring Finance Stakeholder Input
-- Actual accounting system in use
+- Actual accounting system in use and other easily available financial data
 - Full cost/revenue category taxonomies
 - Alert thresholds and triggers
 - Essential metrics and user persona needs
