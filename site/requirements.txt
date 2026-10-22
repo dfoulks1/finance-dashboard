@@ -1,0 +1,7 @@
+# Documentation site toolchain.
+# Install:  uv pip install -r docs/requirements.txt
+# Serve:    mkdocs serve      (local preview at http://127.0.0.1:8000)
+# Build:    mkdocs build      (outputs to site/)
+mkdocs>=1.6
+mkdocs-material>=9.5
+pymdown-extensions>=10.0
