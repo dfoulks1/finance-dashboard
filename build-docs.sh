@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
-# Build the development docs site locally into ./site (no CI — builds are cheap
-# and run on demand). Publish by copying ./site to the host of your choice.
+# Build the development docs site locally into ./docs (no CI — GitHub Actions is
+# costly). The built HTML in ./docs is served directly by GitHub Pages:
+# Settings -> Pages -> Deploy from a branch -> main / /docs.
 #
-#   ./build-docs.sh          # one-off strict build into ./site
+#   ./build-docs.sh          # one-off strict build into ./docs
 #   ./build-docs.sh serve    # live-reload preview at http://127.0.0.1:8000
+#
+# After building, commit ./docs and push main — Pages serves the new content
+# with no workflow run.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -13,12 +17,12 @@ if [ ! -d "$VENV" ]; then
     uv venv "$VENV"
     # shellcheck disable=SC1091
     . "$VENV/bin/activate"
-    uv pip install -r docs/requirements.txt
+    uv pip install -r docs-src/requirements.txt
   else
     python3 -m venv "$VENV"
     # shellcheck disable=SC1091
     . "$VENV/bin/activate"
-    pip install -r docs/requirements.txt
+    pip install -r docs-src/requirements.txt
   fi
 else
   # shellcheck disable=SC1091
@@ -30,4 +34,6 @@ if [ "${1:-build}" = "serve" ]; then
 fi
 
 mkdocs build --strict
-echo "Built site/ — $(find site -type f | wc -l | tr -d ' ') files."
+# Tell GitHub Pages not to run Jekyll over the generated site.
+touch docs/.nojekyll
+echo "Built docs/ — $(find docs -type f | wc -l | tr -d ' ') files (includes .nojekyll)."

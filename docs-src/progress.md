@@ -20,7 +20,7 @@ whenever work lands.
 |------|------|----------|--------|-------|
 | 2026-10-22 | SBOM page | Docs | `docs/sbom.md` | Dependency inventory + ASF license-category tracking |
 | 2026-10-22 | Software map | Docs | `docs/software-map.md` | Repo tree, planned app layout, component diagram |
-| 2026-10-22 | Docs website scaffold | Docs | `mkdocs.yml`, `docs/`, `build-docs.sh` | MkDocs Material; built locally into `site/` (no CI — kept cheap) |
+| 2026-10-22 | Docs website scaffold | Docs | `mkdocs.yml`, `docs-src/`, `docs/`, `build-docs.sh` | MkDocs Material; source in `docs-src/`, built HTML in `docs/` served by GitHub Pages (`/docs`, no CI) |
 | 2026-10-22 | AI Contribution Guide | Process | `CONTRIBUTING.md` | Meta-prompt process, numbered prompt system, ASF generative-AI policy compliance |
 | 2026-10-22 | Prompt library baseline | Process | `prompts/README.md`, `prompts/00-context.md` | Prompt index + shared context baseline (no build prompts authored yet) |
 | 2026-10-22 | Meta-prompt template | Requirements | `prompts/asf-financial-dashboard-requirements.md` | Template for generating stakeholder/build prompts |

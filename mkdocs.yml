@@ -8,7 +8,13 @@ site_url: https://dfoulks1.github.io/finance-dashboard/
 
 repo_name: dfoulks1/finance-dashboard
 repo_url: https://github.com/dfoulks1/finance-dashboard
-edit_uri: edit/main/docs/
+edit_uri: edit/main/docs-src/
+
+# Source markdown lives in docs-src/; the built HTML is written into docs/ so
+# GitHub Pages can serve it directly from a branch (Settings -> Pages ->
+# Deploy from a branch -> main / /docs). No GitHub Actions involved.
+docs_dir: docs-src
+site_dir: docs
 
 copyright: >-
   Documentation is AI-assisted and human-reviewed before publication

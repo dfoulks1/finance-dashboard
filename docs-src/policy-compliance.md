@@ -34,11 +34,11 @@ substitute.**
 ## How this repo satisfies the publishing rule
 
 The docs site is **built locally from the default branch after human-reviewed
-merges**, and the generated `site/` directory is what gets published. The
-reviewer who merges takes responsibility for the published text, which is
-exactly what the EU AI Act path requires — no extra labeling is needed as long
-as the review gate holds. If content is ever auto-published without review, it
-must be labeled AI-generated.
+merges** — source in `docs-src/`, built HTML committed to `docs/` and served by
+GitHub Pages (`/docs`, no CI). The reviewer who merges takes responsibility for
+the published text, which is exactly what the EU AI Act path requires — no extra
+labeling is needed as long as the review gate holds. If content is ever
+auto-published without review, it must be labeled AI-generated.
 
 ## Tooling
 

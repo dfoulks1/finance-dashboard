@@ -157,8 +157,8 @@ it publishes** (normal review, nothing extra). If content is ever published
 *without* human review — e.g. a bot auto-posting — it must carry a clear
 AI-generated label. In short: **review it before you publish it, or label it.**
 Our docs are built locally from the default branch *after* human-reviewed
-merges, and the generated `site/` is what gets published — which satisfies the
-review path.
+merges — source in `docs-src/`, built HTML committed to `docs/` and served by
+GitHub Pages (`/docs`, no CI) — which satisfies the review path.
 
 ### 3.6 Tool choice
 

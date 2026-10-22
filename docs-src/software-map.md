@@ -11,7 +11,7 @@ finance-dashboard/
 ├── CONTRIBUTING.md                 # AI contribution guide (authoritative)
 ├── README.md                       # project entry point
 ├── mkdocs.yml                      # docs site config (MkDocs Material)
-├── docs/                           # this website's source
+├── docs-src/                       # this website's SOURCE (markdown)
 │   ├── index.md
 │   ├── ai-contribution.md          # embeds CONTRIBUTING.md
 │   ├── prompt-system.md
@@ -21,13 +21,18 @@ finance-dashboard/
 │   ├── progress.md
 │   ├── policy-compliance.md
 │   └── requirements.txt            # docs toolchain deps
+├── docs/                           # BUILT HTML — served by GitHub Pages (/docs)
 ├── prompts/                        # prompt library (see CONTRIBUTING §4–5)
 │   ├── README.md                   # prompt index
 │   ├── 00-context.md               # shared baseline
 │   └── asf-financial-dashboard-requirements.md   # the meta-prompt
-├── build-docs.sh                   # builds the site locally into site/
-└── site/                           # generated docs (published artifact)
+└── build-docs.sh                   # builds docs-src/ into docs/ locally (no CI)
 ```
+
+!!! note "Source vs. built output"
+    Edit markdown in `docs-src/`. Run `./build-docs.sh` to regenerate `docs/`.
+    GitHub Pages serves `docs/` straight from the `main` branch — commit the
+    rebuilt `docs/` alongside your source change. No GitHub Actions run.
 
 ## Planned application structure
 
